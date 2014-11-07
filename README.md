@@ -8,10 +8,10 @@ It adds a convenient way for your objects to declare events that those objects s
 How it works
 ------------
 
-An Event object is a way for an object instance to declare an event that happen within this particular object lifecycle. Other objects listen to this event and the object that manages this event decides when to propagate the event to all the listeners.
+An Event object is a way for an object instance to declare an event that can happen within this particular object lifecycle. Other objects listen to this event and the object that manages this event decides when to propagate the event to all the listeners.
 
 An event listener is called a handler.
-
+c
 To add a handler, you can either call the "add()" method on the Event object or use the overloaded operator "+=". Both methods return an integer id that can be used for removing the added handler later.
 
 To notify the handlers, you call "notify()" that will notify every handlers that this event occured.
@@ -38,7 +38,7 @@ onTextEntered.add({ (text) in
 })
 
 // Notifying an event.
-// This calls every callbacks registered on this event.
+// This calls every callback registered on this event.
 // On this example, this should print two times "User entered: wololo"
 onTextEntered.notify("wololo")
 
