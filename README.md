@@ -70,13 +70,15 @@ Multithreading usage
 
 ```swift
 // Declaring a thread safe Event
-let onTextEntered = Event<String>(threadSafe: true)
+let onBufferAppended = Event<Double>(threadSafe: true)
 
 // Add a handler that will be called on the main queue
-onTextEntered.add({ (str) in println(str) }, dispatchQueue: dispatch_get_main_queue())
+onBufferedAppended.add({ (time) in
+  println("Added buffer at \(time)")
+}, dispatchQueue: dispatch_get_main_queue())
 
 // Declaring a thread safe event where every handlers are called on the main thread
-let onTextCleared = Event2<Int, String>(threadSafe: true, dispatchQueue: dispatch_get_main_queue())
+let onBufferAppended = Event<Double>(threadSafe: true, dispatchQueue: dispatch_get_main_queue())
 ```
 
 Installation
