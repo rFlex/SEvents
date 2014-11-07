@@ -12,7 +12,7 @@ An Event object is a way for an object instance to declare an event that happen 
 
 An event listener is called a handler.
 
-To add a handler, you can either call the "add()" method on the Event object or use the overloaded operator "+=".
+To add a handler, you can either call the "add()" method on the Event object or use the overloaded operator "+=". Both methods return an integer id that can be used for removing the added handler later.
 
 To notify the handlers, you call "notify()" that will notify every handlers that this event occured.
 
@@ -47,6 +47,13 @@ onTextEntered.notify("wololo")
 let onTextEntered = Event2<String, Int>()
 onTextEntered.notify("Hey", 42)
 
+// Adding a handler and keeping a reference to it
+let id = onTextEntered += ({ (text, id) in
+  println("\(id) - \(text)")
+})
+
+// Removing a handler by using the reference
+onTextEntered -= id
 ```
 
 Multithreading
