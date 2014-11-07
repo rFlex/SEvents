@@ -1,7 +1,7 @@
 SEvents
 =======
 
-Swift events dispatching made easy, done the C# way.
+Swift events dispatching made easy.
 
 It adds a convenient way for your objects to declare events that those objects send, and let listeners register easily to those events to know when they happen.
 
